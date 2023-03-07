@@ -1,12 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Map } from './src/Map';
+import { Switch } from './src/Switch';
+import { OfflineContext } from './src/context';
+import { useState } from 'react';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [offline, setOffline] = useState(true)
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <OfflineContext.Provider value={[offline, setOffline]}>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Map" component={Map} />
+          <Tab.Screen name="Switch" component={Switch} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </OfflineContext.Provider>
+  
+   
   );
 }
 
