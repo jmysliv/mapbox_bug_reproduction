@@ -12,13 +12,7 @@
         "@rnmapbox/maps",
         {
           "RNMapboxMapsImpl": "mapbox",
-          "RNMapboxMapsDownloadToken": "DOWNLOAD_TOKEN"
-        }
-      ],
-      [
-        "expo-location",
-        {
-          "locationAlwaysAndWhenInUsePermission": "Allow mapbox-bug to use your location."
+          "RNMapboxMapsDownloadToken": "TOKEN"
         }
       ]
     ],
@@ -39,12 +33,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.jmysliv.mapboxbug",
-      "config": {
-        "googleMaps": {
-          "apiKey": "API_KEY"
-        }
-      }
+      "package": "com.jmysliv.mapboxbug"
     },
     "web": {
       "favicon": "./assets/favicon.png"
